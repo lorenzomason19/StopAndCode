@@ -6,6 +6,7 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import it.lorenzo.StopAndCode2.exception.LibroNotFoundException;
 import it.lorenzo.StopAndCode2.model.Libro;
 
 @Service
