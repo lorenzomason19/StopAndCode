@@ -7,15 +7,11 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
-public interface ComuneRepository extends JpaRepository<Comune, Long> {
+public interface ComuneRepository extends JpaRepository<Comune, String> {
 
-  Optional<Comune> findByCodiceCatastale(String codiceCatastale);
-
-  boolean existsByCodiceCatastale(String codiceCatastale);
-
+  // Query personalizzata per trovare comuni per provincia (opzionale)
   @Query("SELECT c FROM Comune c WHERE c.provincia = :provincia")
   List<Comune> findByProvincia(@Param("provincia") String provincia);
 }

@@ -7,14 +7,11 @@ import jakarta.persistence.*;
 public class Comune {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  @Column(name = "codice_catastale", length = 4)
+  private String codiceCatastale;
 
   @Column(nullable = false)
   private String nome;
-
-  @Column(name = "codice_catastale", nullable = false, unique = true, length = 4)
-  private String codiceCatastale;
 
   @Column(nullable = false, length = 10)
   private String provincia;
@@ -41,15 +38,17 @@ public class Comune {
   @JoinColumn(name = "id_coordinata", nullable = false)
   private Coordinate coordinate;
 
+  // Costruttori
   public Comune() {
   }
 
-  public Long getId() {
-    return id;
+  // Getter e Setter (SENZA getId/setId)
+  public String getCodiceCatastale() {
+    return codiceCatastale;
   }
 
-  public void setId(Long id) {
-    this.id = id;
+  public void setCodiceCatastale(String codiceCatastale) {
+    this.codiceCatastale = codiceCatastale;
   }
 
   public String getNome() {
@@ -58,14 +57,6 @@ public class Comune {
 
   public void setNome(String nome) {
     this.nome = nome;
-  }
-
-  public String getCodiceCatastale() {
-    return codiceCatastale;
-  }
-
-  public void setCodiceCatastale(String codiceCatastale) {
-    this.codiceCatastale = codiceCatastale;
   }
 
   public String getProvincia() {
