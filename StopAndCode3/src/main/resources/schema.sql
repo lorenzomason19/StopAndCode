@@ -27,3 +27,6 @@ INSERT INTO comuni (codice_catastale, nome, provincia, cap, prefisso, mail, pec,
 ('H501', 'Roma', '058', '00186', '06', 'ld.gabinetto@comune.roma.it', 'protocollo.segretariato@pec.comune.roma.it', '+39 06/67102001', '+39 06/67103590', 1),
 ('F205', 'Milano', '015', '20141', '02', 'stl.informagiovani@comune.milano.it', 'protocollo@postacert.comune.milano.it', '+39 02 0202', '+39 02 88452170', 2),
 ('F839', 'Napoli', '063', '80127', '081', 'sindaco@comune.napoli.it', 'protocollo@pec.comune.napoli.it', '+39 081 7951111', '+39 081 7955509', 3);
+
+-- Reset della sequenza auto-increment per coordinate
+ALTER TABLE coordinate ALTER COLUMN id RESTART WITH 4;

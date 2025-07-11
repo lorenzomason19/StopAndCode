@@ -34,7 +34,7 @@ public class Comune {
   @Column(nullable = false, length = 30)
   private String fax;
 
-  @OneToOne(cascade = CascadeType.ALL)
+  @OneToOne
   @JoinColumn(name = "id_coordinata", nullable = false)
   private Coordinate coordinate;
 
