@@ -41,11 +41,9 @@ public class Comune {
   @JoinColumn(name = "id_coordinata", nullable = false)
   private Coordinate coordinate;
 
-  // Costruttori
   public Comune() {
   }
 
-  // Getter e Setter
   public Long getId() {
     return id;
   }

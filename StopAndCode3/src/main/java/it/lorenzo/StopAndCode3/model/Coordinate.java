@@ -16,7 +16,6 @@ public class Coordinate {
   @Column(nullable = false)
   private Double lng;
 
-  // Costruttori
   public Coordinate() {
   }
 
@@ -25,7 +24,6 @@ public class Coordinate {
     this.lng = lng;
   }
 
-  // Getter e Setter
   public Long getId() {
     return id;
   }
