@@ -1,5 +1,6 @@
 package it.lorenzo.StopAndCode3.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -17,6 +18,7 @@ public class Coordinate {
   private Double lng;
 
   @OneToOne(mappedBy = "coordinate")
+  @JsonBackReference
   private Comune comune;
 
   public Coordinate() {
