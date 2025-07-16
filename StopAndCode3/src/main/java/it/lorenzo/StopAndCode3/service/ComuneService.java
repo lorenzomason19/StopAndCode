@@ -31,17 +31,13 @@ public class ComuneService {
       throw new RuntimeException("Comune con codice catastale " + comune.getCodiceCatastale() + " già esistente");
     }
 
-    // Gestione manuale delle coordinate
     if (comune.getCoordinate() != null) {
-      // Crea una nuova coordinata senza ID
       Coordinate nuovaCoordinata = new Coordinate(
           comune.getCoordinate().getLat(),
           comune.getCoordinate().getLng());
 
-      // Salva la coordinata separatamente
       Coordinate coordinataSalvata = coordinateRepository.save(nuovaCoordinata);
 
-      // Associa la coordinata salvata al comune
       comune.setCoordinate(coordinataSalvata);
     }
 
