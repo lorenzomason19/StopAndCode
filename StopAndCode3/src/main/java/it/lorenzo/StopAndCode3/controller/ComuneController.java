@@ -2,7 +2,6 @@ package it.lorenzo.StopAndCode3.controller;
 
 import it.lorenzo.StopAndCode3.model.Comune;
 import it.lorenzo.StopAndCode3.service.ComuneService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,8 +14,11 @@ import java.util.Optional;
 @CrossOrigin(origins = "*")
 public class ComuneController {
 
-  @Autowired
   private ComuneService comuneService;
+
+  public ComuneController(ComuneService comuneService) {
+    this.comuneService = comuneService;
+  }
 
   // GET /comuni - Restituisce tutti i comuni
   @GetMapping

@@ -4,7 +4,6 @@ import it.lorenzo.StopAndCode3.model.Comune;
 import it.lorenzo.StopAndCode3.model.Coordinate;
 import it.lorenzo.StopAndCode3.repository.ComuneRepository;
 import it.lorenzo.StopAndCode3.repository.CoordinateRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
@@ -12,11 +11,13 @@ import java.util.Optional;
 @Service
 public class ComuneService {
 
-  @Autowired
-  private ComuneRepository comuneRepository;
+  private final ComuneRepository comuneRepository;
+  private final CoordinateRepository coordinateRepository;
 
-  @Autowired
-  private CoordinateRepository coordinateRepository;
+  public ComuneService(ComuneRepository comuneRepository, CoordinateRepository coordinateRepository) {
+    this.comuneRepository = comuneRepository;
+    this.coordinateRepository = coordinateRepository;
+  }
 
   public List<Comune> getAllComuni() {
     return comuneRepository.findAll();

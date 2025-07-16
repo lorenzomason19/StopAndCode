@@ -16,6 +16,9 @@ public class Coordinate {
   @Column(nullable = false)
   private Double lng;
 
+  @OneToOne(mappedBy = "coordinate")
+  private Comune comune;
+
   public Coordinate() {
   }
 
@@ -46,5 +49,13 @@ public class Coordinate {
 
   public void setLng(Double lng) {
     this.lng = lng;
+  }
+
+  public Comune getComune() {
+    return comune;
+  }
+
+  public void setComune(Comune comune) {
+    this.comune = comune;
   }
 }
